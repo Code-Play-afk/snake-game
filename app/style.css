@@ -86,14 +86,12 @@ body {
   grid-template-columns: repeat(25, 1fr);
 }
 .Snake {
-  background-color: #68b984;
-  /* border: 0.25vmin solid #000; */
-  /* border-radius: 3px; */
+  background-color: #ffe600;
+  border: 0.25vmin solid #000;
 }
 #SnakeHead {
-  background-color: #407c55;
-  /* border: 0.25vmin solid #000; */
-  /* border-radius: 3px; */
+  background-color: white;
+  border: 0.25vmin solid #000;
 }
 
 .Food {

@@ -34,7 +34,7 @@ function handleLoss() {
     document.addEventListener("click", handleStart, {
       once: true,
     });
-  });
+  }, 1000);
 }
 
 function gameLoop(currentTime) {
