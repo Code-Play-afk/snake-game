@@ -34,11 +34,11 @@ export function updateHighScore(points) {
 
 export function putScore(score) {
   highScore = getHighScore();
-  score.innerHTML = `High Score:${highScore}<br>Score: ${currentScore}`;
+  score.innerHTML = `High Score:<span class="numbers">${highScore}</span><br>Score: <span class="numbers">${currentScore}</span>`;
 }
 
 export function updateScoreBoard(high, current) {
   highScore = getHighScore();
-  high.innerHTML = `High Score: ${highScore}`;
-  current.innerHTML = `Current Score: ${currentScore}`;
+  high.innerHTML = `Hi Score: <span class="numbers">${highScore}</span>`;
+  current.innerHTML = `Score: <span class="numbers">${currentScore}</span>`;
 }

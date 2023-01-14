@@ -51,7 +51,6 @@ export function onSnake(position, { ignoreHead = false } = {}) {
   return snakeBody.some((segment, index) => {
     if (ignoreHead && index === 0) {
       return false;
-      // return equalPosition(segment, position);
     } else {
       return equalPosition(segment, position);
     }
@@ -59,12 +58,12 @@ export function onSnake(position, { ignoreHead = false } = {}) {
 }
 
 export function getSnakeHead() {
-  console.log(snakeBody[0]);
+  // console.log(snakeBody[0]);
   return snakeBody[0];
 }
 
 export function snakeIntersects() {
-  console.log(`intersection: ${onSnake(snakeBody[0], { ignoreHead: true })}`);
+  // console.log(`intersection: ${onSnake(snakeBody[0], { ignoreHead: true })}`);
   return onSnake(snakeBody[0], { ignoreHead: true });
 }
 

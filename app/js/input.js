@@ -6,24 +6,16 @@ export function getInputDirections() {
   return inputDirection;
 }
 
-window.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "ArrowUp":
-      if (previousInput.y != 0) break;
-      inputDirection = { x: 0, y: -1 };
-      break;
-    case "ArrowDown":
-      if (previousInput.y != 0) break;
-      inputDirection = { x: 0, y: 1 };
-      break;
-    case "ArrowLeft":
-      if (previousInput.x != 0) break;
-      inputDirection = { x: -1, y: 0 };
-      break;
-    case "ArrowRight":
-      if (previousInput.x != 0) break;
-      inputDirection = { x: 1, y: 0 };
-      break;
+window.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("Up")) {
+    if (previousInput.y === 0) inputDirection = { x: 0, y: -1 };
+  } else if (e.target.classList.contains("Down")) {
+    if (previousInput.y === 0) inputDirection = { x: 0, y: 1 };
+  } else if (e.target.classList.contains("Left")) {
+    if (previousInput.x === 0) inputDirection = { x: -1, y: 0 };
+  } else if (e.target.classList.contains("Right")) {
+    if (previousInput.x === 0) inputDirection = { x: 1, y: 0 };
   }
 });
 

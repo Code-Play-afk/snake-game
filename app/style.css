@@ -5,9 +5,14 @@
 #820000 red
 #36454f charcoal
 */
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap");
 @font-face {
   font-family: "snakeGame";
   src: url(../_assets/fonts/SnakeGameDemoRegular.ttf);
+}
+@font-face {
+  font-family: "myNumeric";
+  src: url(../_assets/fonts/digital_counter_7.ttf);
 }
 *,
 *::before,
@@ -31,12 +36,13 @@ body {
 }
 
 #Title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   z-index: 10;
   color: #efefef;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   display: flex;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -66,8 +72,11 @@ body {
 .CurrentScore {
   margin-right: 10px;
 }
+.numbers {
+  font-family: myNumeric;
+}
 #GameBoard {
-  background-color: #cfcfcf;
+  background: url("../_assets/_images/grid.png");
   width: 100vmin;
 
   height: 120vmin;
@@ -95,14 +104,14 @@ body {
 
 #Controller {
   width: 100%;
-  height: 300px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .Controller {
-  width: 10rem;
-  height: 10rem;
+  width: 150px;
+  height: 150px;
   /* margin-top: 4rem; */
   display: grid;
   gap: 0.5rem;
@@ -118,6 +127,7 @@ body {
   height: 100%;
   background-color: #efefef;
   width: 100%;
+  border-radius: 8px;
   overflow: hidden;
 }
 .fa-solid {
@@ -126,8 +136,30 @@ body {
   transform: rotate(45deg);
   font-size: 4.5rem;
 }
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #868686;
+}
+footer > h2 {
+  font-size: 3rem;
+}
+footer > p {
+  color: white;
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 1.1rem;
+}
 @media (min-width: 600px) {
   body {
+    display: none;
     max-height: 100vh;
   }
 

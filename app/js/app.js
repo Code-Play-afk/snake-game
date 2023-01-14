@@ -30,7 +30,7 @@ function handleStart() {
 function handleLoss() {
   putScore(score);
   title.style.display = "flex";
-  document.addEventListener("keypress", handleStart, { once: true });
+  document.addEventListener("click", handleStart, { once: true });
 }
 
 function gameLoop(currentTime) {
@@ -65,4 +65,4 @@ function gameOver() {
   return outsideGrid(getSnakeHead()) || snakeIntersects();
 }
 
-document.addEventListener("keypress", handleStart, { once: true });
+document.addEventListener("click", handleStart, { once: true });

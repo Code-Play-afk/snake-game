@@ -14,8 +14,8 @@ export function setGrid(grid) {
 
 export function randomGridPosition() {
   return {
-    x: Math.floor(Math.random() * 21) + 1,
-    y: Math.floor(Math.random() * 21) + 1,
+    x: Math.floor(Math.random() * 25) + 1,
+    y: Math.floor(Math.random() * 30) + 1,
   };
 }
 
