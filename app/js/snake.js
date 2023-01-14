@@ -1,4 +1,4 @@
-export let SNAKE_SPEED = 5;
+export let SNAKE_SPEED = 15;
 import { getInputDirections } from "./input.js";
 
 // *M
@@ -41,7 +41,7 @@ export function updateSnake() {
 
 export function growSnake(segment) {
   newSegment += segment;
-  SNAKE_SPEED += 0.2;
+  // SNAKE_SPEED += 0.2;
 }
 export function resetSnake() {
   snakeBody = [{ x: 2, y: 1 }];

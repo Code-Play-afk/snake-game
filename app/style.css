@@ -87,13 +87,13 @@ body {
 }
 .Snake {
   background-color: #68b984;
-  border: 0.25vmin solid #000;
-  border-radius: 3px;
+  /* border: 0.25vmin solid #000; */
+  /* border-radius: 3px; */
 }
 #SnakeHead {
   background-color: #407c55;
-  border: 0.25vmin solid #000;
-  border-radius: 3px;
+  /* border: 0.25vmin solid #000; */
+  /* border-radius: 3px; */
 }
 
 .Food {

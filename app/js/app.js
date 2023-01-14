@@ -30,7 +30,11 @@ function handleStart() {
 function handleLoss() {
   putScore(score);
   title.style.display = "flex";
-  document.addEventListener("click", handleStart, { once: true });
+  setTimeout(() => {
+    document.addEventListener("click", handleStart, {
+      once: true,
+    });
+  });
 }
 
 function gameLoop(currentTime) {
