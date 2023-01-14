@@ -1,0 +1,142 @@
+/* 
+#CFCFCF gray
+#405742 green dark
+#68B984 green
+#820000 red
+#36454f charcoal
+*/
+@font-face {
+  font-family: "snakeGame";
+  src: url(../_assets/fonts/SnakeGameDemoRegular.ttf);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding-top: 30px;
+  font-family: snakeGame;
+  position: relative;
+  max-height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #36454f;
+}
+
+#Title {
+  font-size: 2.5rem;
+  z-index: 10;
+  color: #efefef;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+}
+#Title::before {
+  content: "Click Anywhere To Start";
+}
+.DisplayScore {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  color: white;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+}
+.Score {
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+}
+.HighScore {
+  margin-left: 10px;
+}
+.CurrentScore {
+  margin-right: 10px;
+}
+#GameBoard {
+  background-color: #cfcfcf;
+  width: 100vmin;
+
+  height: 120vmin;
+
+  display: grid;
+  grid-template-rows: repeat(30, 1fr);
+  grid-template-columns: repeat(25, 1fr);
+}
+.Snake {
+  background-color: #68b984;
+  border: 0.25vmin solid #000;
+  border-radius: 3px;
+}
+#SnakeHead {
+  background-color: #407c55;
+  border: 0.25vmin solid #000;
+  border-radius: 3px;
+}
+
+.Food {
+  background-color: #820000;
+  border: 0.25vmin solid #000;
+  border-radius: 50%;
+}
+
+#Controller {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Controller {
+  width: 10rem;
+  height: 10rem;
+  /* margin-top: 4rem; */
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  transform: rotate(45deg);
+}
+.Controller__Item {
+  border: 1px solid #405742;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #efefef;
+  width: 100%;
+  overflow: hidden;
+}
+.fa-solid {
+  color: #820000;
+  filter: grayscale(50%);
+  transform: rotate(45deg);
+  font-size: 4.5rem;
+}
+@media (min-width: 600px) {
+  body {
+    max-height: 100vh;
+  }
+
+  #GameBoard {
+    height: 840px;
+    width: 700px;
+  }
+  #Controller {
+    height: 0;
+    overflow: hidden;
+  }
+}
