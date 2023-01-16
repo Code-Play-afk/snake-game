@@ -1,5 +1,5 @@
-export let SNAKE_SPEED = 2;
-import { getInputDirections } from "./input.js";
+export let SNAKE_SPEED = 5;
+import { getInputDirections, getHeadDirections } from "./input.js";
 
 // *M
 
@@ -8,7 +8,7 @@ let newSegment = 0;
 
 // *V
 
-export function drawSnake(gameBoard) {
+export function drawSnake(gameBoard, headDirection) {
   // console.log("drewSnake");
   snakeBody.forEach((segment) => {
     if (snakeBody.indexOf(segment) === 0) {
@@ -16,12 +16,14 @@ export function drawSnake(gameBoard) {
       snakeHead.style.gridColumnStart = segment.x;
       snakeHead.style.gridRowStart = segment.y;
       snakeHead.id = "SnakeHead";
+      snakeHead.removeAttribute("class");
+      snakeHead.className = headDirection;
       gameBoard.appendChild(snakeHead);
     } else {
       const snakeSegment = document.createElement("div");
       snakeSegment.style.gridColumnStart = segment.x;
       snakeSegment.style.gridRowStart = segment.y;
-      snakeSegment.classList.add("Snake");
+      snakeSegment.classList.add(`Snake${Math.floor(Math.random() * 5) + 1}`);
       gameBoard.appendChild(snakeSegment);
     }
   });
@@ -35,16 +37,18 @@ export function updateSnake() {
     snakeBody[i + 1] = { ...snakeBody[i] };
   }
   const inputDirection = getInputDirections();
+  const headDirection = getHeadDirections();
   snakeBody[0].x += inputDirection.x;
   snakeBody[0].y += inputDirection.y;
+  return headDirection;
 }
 
 export function growSnake(segment) {
   newSegment += segment;
-  SNAKE_SPEED += 0.2;
+  if (SNAKE_SPEED <= 10) SNAKE_SPEED += 0.1;
 }
 export function resetSnake() {
-  SNAKE_SPEED = 2;
+  SNAKE_SPEED = 5;
   snakeBody = [{ x: 2, y: 1 }];
 }
 

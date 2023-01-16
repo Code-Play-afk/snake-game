@@ -8,11 +8,12 @@ import {
 } from "./snake.js";
 import { drawFood, updateFood } from "./food.js";
 import { setGrid, outsideGrid } from "./grid.js";
-import { clearInputField } from "./input.js";
+import { clearInputField, clearHeadDirection } from "./input.js";
 import { putScore, resetScore, updateScoreBoard } from "./score.js";
 
 const gameBoard = document.getElementById("GameBoard");
 let lastRenderTime = 0;
+let headDirection = "";
 const title = document.getElementById("Title");
 const score = document.querySelector("[data-subtitle]");
 const high = document.querySelector(".HighScore");
@@ -21,6 +22,7 @@ const current = document.querySelector(".CurrentScore");
 // *V
 function handleStart() {
   clearInputField();
+  headDirection = clearHeadDirection();
   resetScore();
   title.style.display = "none";
   resetSnake();
@@ -52,7 +54,7 @@ function gameLoop(currentTime) {
 }
 
 function drawGame() {
-  drawSnake(gameBoard);
+  drawSnake(gameBoard, headDirection);
   drawFood(gameBoard);
 }
 
@@ -60,7 +62,7 @@ function drawGame() {
 
 function updateGame() {
   gameBoard.innerHTML = "";
-  updateSnake();
+  headDirection = updateSnake();
   updateFood();
   updateScoreBoard(high, current);
 }

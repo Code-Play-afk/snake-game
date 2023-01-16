@@ -14,11 +14,11 @@ export function setGrid(grid) {
 
 export function randomGridPosition() {
   return {
-    x: Math.floor(Math.random() * 25) + 1,
-    y: Math.floor(Math.random() * 30) + 1,
+    x: Math.floor(Math.random() * 20) + 1,
+    y: Math.floor(Math.random() * 24) + 1,
   };
 }
 
 export function outsideGrid(position) {
-  return position.x < 1 || position.x > 25 || position.y < 1 || position.y > 30;
+  return position.x < 1 || position.x > 20 || position.y < 1 || position.y > 24;
 }
